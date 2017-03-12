@@ -45,12 +45,18 @@ namespace Treehouse.FitnessFrog.Controllers
             return View();
         }
 
-        [ActionName("Add")]
+        //[ActionName("Add")]
         [HttpPost]
         //Adding attributes to method and class
-        public ActionResult AddPost()
+        public ActionResult Add(string date, string activityId, string duration, string intensity, string exclude, string notes)
         {
-
+            //string date = Request.Form["Date"];
+            ViewBag.Date = date;
+            ViewBag.ActivityId = activityId;
+            ViewBag.Duration = duration;
+            ViewBag.Intensity = intensity;
+            ViewBag.Exclude = exclude;
+            ViewBag.Notes = notes;
             return View();
         }
         public ActionResult Edit(int? id)
